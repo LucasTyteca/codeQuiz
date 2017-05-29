@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}
+Quizzen
+{% endblock %}
+{% block  body %}
+    <form name="quizzoeken" method="POST" action="">
+        <input type="text" title="quiznaam" name="quiznaam" id="quiznaam">
+        <input type="submit" value="Zoeken" title="zoekquiz">
+    </form>
+    <!-- zoekresultaten tonen -->
+{% endblock %}

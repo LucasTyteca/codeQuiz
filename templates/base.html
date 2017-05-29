@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for("static",filename="../static/css/import.css") }}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for("index") }}">Home</a></li>
+            <li><a href="{{ url_for("quizzenPage") }}">Quizzen</a></li>
+            <li><a href="{{ url_for("statistiekenPage") }}">Statistieken</a></li>
+        </ul>
+    </nav>
+    {% block body %}
+    {% endblock %}
+</body>
+</html>
