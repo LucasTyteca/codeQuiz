@@ -1,4 +1,8 @@
-body {
-  background-color: red; }
+.base li {
+  float: right; }
+
+img {
+  width: 100%;
+  height: auto; }
 
 /*# sourceMappingURL=import.css.map */

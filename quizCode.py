@@ -10,9 +10,13 @@ def index():
     return render_template("index.html")
 
 
-@app.route('/quizzen')
+@app.route('/quiz_spelen')
 def quizzenPage():
     return render_template("quizzen.html")
+
+@app.route('/create_quiz')
+def createQuizPage():
+    return render_template("createQuiz.html")
 
 
 @app.route('/statistieken')
