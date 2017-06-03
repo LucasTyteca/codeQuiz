@@ -1,1 +1,3 @@
-$nav-item-color : 858585;
+$nav-item-color : #858585;
+$lighten-nav-item-color: lighten($nav-item-color, 10%);
+$before-nav-item-color: #b8b8b8;

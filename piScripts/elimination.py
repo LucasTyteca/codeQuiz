@@ -2,8 +2,8 @@ from RPi import GPIO as GPIO
 import time
 GPIO.setmode(GPIO.BCM)
 #knoppen declareren
-buttons = [4, 17, 27, 22] #oranje, rood, groen, blauw
-buttonOrange = 4
+buttons = [18, 17, 27, 22] #oranje, rood, groen, blauw
+buttonOrange = 18
 buttonRed = 17
 buttonGreen = 27
 buttonBlue = 22
