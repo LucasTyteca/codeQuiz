@@ -1,0 +1,19 @@
+.quizzen{
+  input, select{
+    width:100%;
+    text-align: center;
+    text-align-last: center;
+  }
+  .player{
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+  }
+  .explanation{
+    margin-top: 40px;
+    font-size: 18px;
+  }
+  .choosequiz{
+    margin-top: 40px;
+  }
+}

@@ -1,3 +1,17 @@
+.button {
+  margin-top: 40px;
+  width: 185px;
+  height: 45px;
+  background-color: #b8b8b8;
+  border: none;
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 45px;
+  color: black; }
+  .button:hover {
+    background-color: #d2d2d2;
+    color: #1a1a1a; }
+
 .base {
   margin-left: 0;
   margin-right: 0; }
@@ -25,7 +39,8 @@
         font-size: 36px;
         line-height: 100px; }
         .base ul li a:hover {
-          text-decoration: none; }
+          text-decoration: none;
+          color: #1a1a1a; }
       .base ul li:hover {
         background-color: #9f9f9f; }
       .base ul li:before {
@@ -61,5 +76,22 @@
       text-align: left; }
     .base footer p:last-of-type {
       text-align: right; }
+
+.home p {
+  font-size: 18px; }
+
+.quizzen input, .quizzen select {
+  width: 100%;
+  text-align: center;
+  text-align-last: center; }
+.quizzen .player {
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold; }
+.quizzen .explanation {
+  margin-top: 40px;
+  font-size: 18px; }
+.quizzen .choosequiz {
+  margin-top: 40px; }
 
 /*# sourceMappingURL=import.css.map */

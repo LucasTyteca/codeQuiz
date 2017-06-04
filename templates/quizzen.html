@@ -3,9 +3,78 @@
 Quizzen
 {% endblock %}
 {% block  body %}
-    <form name="quizzoeken" method="POST" action="">
-        <input type="text" title="quiznaam" name="quiznaam" id="quiznaam">
-        <input type="submit" value="Zoeken" title="zoekquiz">
-    </form>
-    <!-- zoekresultaten tonen -->
+    <div class="quizzen">
+        <div class="row">
+            <p class="explanation col-lg-12">Lorem ipsum dolor sit amet, nec ne quaeque deseruisse, usu ne virtute oportere consectetuer. Mea in quem reprimique, id dicit percipit vis, dignissim splendide mediocritatem eam no. Placerat forensibus vis at, ferri fugit dicit id mea, ut est ipsum paulo iuvaret. Ludus imperdiet ius ea, ancillae</p>
+        </div>
+        <div class="row">
+            <div class="player1 col-lg-3">
+                <h1 class="player">Player 1</h1>
+                <form name="formplayer1">
+                    <select name="chooseplayer1">
+                        <option value="" disabled selected>--Kies speler--</option>
+                        <!--<option value="volvo">Volvo</option> gegevens opvullen uit database -->
+                    </select>
+                    <input type="text" name="firstname1" placeholder="Voornaam">
+                    <input type="text" name="lastname1" placeholder="Naam">
+                    <input type="text" name="displayname1" placeholder="Displaynaam">
+                </form>
+            </div>
+
+            <div class="player2 col-lg-3">
+                <h1 class="player">Player 2</h1>
+                <form name="formplayer2">
+                    <select name="chooseplayer2">
+                        <option value="" disabled selected>--Kies speler--</option>
+                        <!--<option value="volvo">Volvo</option> gegevens opvullen uit database -->
+                    </select>
+                    <input type="text" name="firstname2" placeholder="Voornaam">
+                    <input type="text" name="lastname2" placeholder="Naam">
+                    <input type="text" name="displayname2" placeholder="Displaynaam">
+                </form>
+            </div>
+
+            <div class="player1 col-lg-3">
+                <h1 class="player">Player 3</h1>
+                <form name="formplayer3">
+                    <select name="chooseplayer3">
+                        <option value="" disabled selected>--Kies speler--</option>
+                        <!--<option value="volvo">Volvo</option> gegevens opvullen uit database -->
+                    </select>
+                    <input type="text" name="firstname3" placeholder="Voornaam">
+                    <input type="text" name="lastname3" placeholder="Naam">
+                    <input type="text" name="displayname3" placeholder="Displaynaam">
+                </form>
+            </div>
+
+            <div class="player1 col-lg-3">
+                <h1 class="player">Player 4</h1>
+                <form name="formplayer4">
+                    <select name="chooseplayer4">
+                        <option value="" disabled selected>--Kies speler--</option>
+                        <!--<option value="volvo">Volvo</option> gegevens opvullen uit database -->
+                    </select>
+                    <input type="text" name="firstname4" placeholder="Voornaam">
+                    <input type="text" name="lastname4" placeholder="Naam">
+                    <input type="text" name="displayname4" placeholder="Displaynaam">
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <form name="choosequiz" class="col-lg-6 col-lg-offset-3 choosequiz">
+                <select name="choosequizdrop">
+                    <option value="" disabled selected>--Kies quiz--</option>
+                    <!--gegevens opvullen uit database -->
+                </select>
+            </form>
+        </div>
+        <div class="row">
+                <p class="explanation col-lg-12">Lorem ipsum dolor sit amet, nec ne quaeque deseruisse, usu ne virtute oportere consectetuer. Mea in quem reprimique, id dicit percipit vis, dignissim splendide mediocritatem eam no. Placerat forensibus vis at, ferri fugit dicit id mea, ut est ipsum paulo iuvaret. Ludus imperdiet ius ea, ancillae</p>
+            </div>
+            <div class="row">
+            <from class="col-lg-2 col-lg-offset-5" name="submitplayerforms">
+                <input type="submit" value="Start" class="button">
+            </from>
+        </div>
+    </div>
 {% endblock %}
