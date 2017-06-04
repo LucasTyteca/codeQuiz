@@ -3,5 +3,56 @@
 Welkom
 {% endblock %}
 {% block body %}
-    this is not a test, this is reality
+    <div class="createquiz">
+        <div class="editquiz">
+            <div class="row">
+                <div class="col-lg-4 col-lg-offset-4">
+                    <h1>Quiz bewerken</h1>
+                </div>
+            </div>
+            <form>
+                <div class="row">
+                    <div class="col-lg-4 col-lg-offset-4">
+                        <select name="chooseditquiz">
+                            <option value="" disabled selected>--Kies quiz--</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-2 col-lg-offset-5">
+                        <input type="submit" value="Bewerken" class="button">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="newquiz">
+            <div class="row">
+                <div class="col-lg-4 col-lg-offset-4">
+                    <h1>Quiz maken</h1>
+                </div>
+            </div>
+            <form>
+                <div class="row">
+                    <div class="col-lg-4 col-lg-offset-4">
+                        <input type="text" name="quizname" placeholder="Quiz naam">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-lg-offset-4">
+                        <input type="text" name="description" placeholder="Beschrijving">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-lg-offset-4">
+                        <input type="text" name="amountquestions" placeholder="Aantal vragen">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-2 col-lg-offset-5">
+                        <input type="submit" class="button" value="Start">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 {% endblock %}

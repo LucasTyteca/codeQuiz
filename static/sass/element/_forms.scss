@@ -1,0 +1,12 @@
+input, select{
+  width:100%;
+  text-align: center;
+  text-align-last: center;
+  margin-bottom: 20px;
+  &:last-of-type{
+    margin-bottom: 0;
+  }
+  &:first-child{
+    margin-bottom: 20px;
+  }
+}

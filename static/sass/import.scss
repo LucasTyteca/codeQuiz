@@ -1,5 +1,12 @@
+// fonts and colors import
 @import "_colorsAndFonts";
-@import "button";
+
+//elements imports
+@import "element/_button";
+@import "element/_forms";
+
+//pages imports
 @import "_base";
 @import "_home";
 @import "_quizzen";
+@import "_createquiz";

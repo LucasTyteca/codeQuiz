@@ -1,5 +1,5 @@
 .button {
-  margin-top: 40px;
+  margin-top: 20px;
   width: 185px;
   height: 45px;
   background-color: #b8b8b8;
@@ -11,6 +11,16 @@
   .button:hover {
     background-color: #d2d2d2;
     color: #1a1a1a; }
+
+input, select {
+  width: 100%;
+  text-align: center;
+  text-align-last: center;
+  margin-bottom: 20px; }
+  input:last-of-type, select:last-of-type {
+    margin-bottom: 0; }
+  input:first-child, select:first-child {
+    margin-bottom: 20px; }
 
 .base {
   margin-left: 0;
@@ -80,10 +90,6 @@
 .home p {
   font-size: 18px; }
 
-.quizzen input, .quizzen select {
-  width: 100%;
-  text-align: center;
-  text-align-last: center; }
 .quizzen .player {
   text-align: center;
   font-size: 36px;
@@ -93,5 +99,10 @@
   font-size: 18px; }
 .quizzen .choosequiz {
   margin-top: 40px; }
+
+.createquiz h1 {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center; }
 
 /*# sourceMappingURL=import.css.map */
