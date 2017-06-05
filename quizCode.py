@@ -12,7 +12,11 @@ def index():
 
 @app.route('/quiz_spelen')
 def quizzenPage():
-    return render_template("quizzen.html")
+    db = DbClass()
+    players = db.getAllPlayers()
+    db2 = DbClass()
+    quizzes = db2.getQuizzes()
+    return render_template("quizzen.html", players=players, quizzes=quizzes)
 
 @app.route('/create_quiz')
 def createQuizPage():

@@ -94,7 +94,7 @@ input, select {
   text-align: center;
   font-size: 36px;
   font-weight: bold; }
-.quizzen .explanation {
+.quizzen .explanation, .quizzen .quizDescription {
   margin-top: 40px;
   font-size: 18px; }
 .quizzen .choosequiz {
