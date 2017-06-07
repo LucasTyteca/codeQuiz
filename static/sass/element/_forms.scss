@@ -6,7 +6,7 @@ input, select{
   &:last-of-type{
     margin-bottom: 0;
   }
-  &:first-child{
+  &:first-of-type{
     margin-bottom: 20px;
   }
 }

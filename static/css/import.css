@@ -19,8 +19,15 @@ input, select {
   margin-bottom: 20px; }
   input:last-of-type, select:last-of-type {
     margin-bottom: 0; }
-  input:first-child, select:first-child {
+  input:first-of-type, select:first-of-type {
     margin-bottom: 20px; }
+
+.warning {
+  text-align: center;
+  height: 70px;
+  color: red;
+  line-height: 70px;
+  border: 2px dotted red; }
 
 .base {
   margin-left: 0;

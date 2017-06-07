@@ -1,29 +1,17 @@
-{#{% macro build_figure(file,naam) %}#}
-{#    <figure>#}
-{#        <img#}
-{#                src="{{ url_for("static",filename="images/" + file + ".jpg") }}"#}
-{#                alt=""#}
-{#        >#}
-{#        <figcaption>#}
-{#            {{ naam }}#}
-{#        </figcaption>#}
-{#    </figure>#}
-{#{% endmacro %}#}
-{% macro build_player_forms(players) %}
+{% macro build_player_forms(players, playersjs) %}
     {% for x in range(1,5) %}
         <div class="player{{ x }} col-lg-3">
             <h1 class="player">Player {{ x }}</h1>
-            <form name="formplayer{{ x }}">
-                <select id="chooseplayer{{ x }}" onchange="fillUpInput()">
-                    <option value="" disabled selected>--Kies speler--</option>
-                    {% for player in players %}
-                        <option value="{{ player[0] }}">{{ player[1] }} {{ player[2] }}; {{ player[0] }}</option>
-                    {% endfor %}
-                </select>
-                <input type="text" name="firstname{{ x }}" placeholder="Voornaam">
-                <input type="text" name="lastname{{ x }}" placeholder="Naam">
-                <input type="text" name="displayname{{ x }}" placeholder="Displaynaam">
-            </form>
+            <select id="chooseplayer{{ x }}" name="chooseplayer{{ x }}" onchange="fillUpInput{{ x }}(players={{ playersjs }})" title="choosePlayer">
+                <option value="" selected disabled>--Kies speler--</option>
+                <option value="newPlayer">--Nieuwe speler--</option>
+                {% for player in players %}
+                    <option value="{{ player[0] }}">{{ player[2] }} {{ player[3] }}; {{ player[1] }}</option>
+                {% endfor %}
+            </select>
+            <input type="text" id="firstname{{ x }}" name="firstname{{ x }}" placeholder="Voornaam" required>
+            <input type="text" id="lastname{{ x }}" name="lastname{{ x }}" placeholder="Naam" required>
+            <input type="text" id="displayname{{ x }}" name="displayname{{ x }}" placeholder="Displaynaam" required onchange="changeDisplayName{{ x }}({{ playersjs }})">
         </div>
     {% endfor %}
 {% endmacro %}

@@ -8,27 +8,31 @@ Quizzen
             <p class="explanation col-lg-12">Lorem ipsum dolor sit amet, nec ne quaeque deseruisse, usu ne virtute oportere consectetuer. Mea in quem reprimique, id dicit percipit vis, dignissim splendide mediocritatem eam no. Placerat forensibus vis at, ferri fugit dicit id mea, ut est ipsum paulo iuvaret. Ludus imperdiet ius ea, ancillae</p>
         </div>
         <div class="row">
-            {{ macro.build_player_forms(players) }}
-
+            <div class="warning col-lg-4 col-lg-offset-4" id="warning" style="display:none">
+                <p id="playerwarning" style="display:none"> U kunt geen twee dezelfde spelers kiezen!</p>
+                <p id="displaynamewarning" style="display:none"> De ingegeven displaynaam bestaat al!</p>
+            </div>
         </div>
-        <div class="row">
-            <form name="choosequiz" class="col-lg-6 col-lg-offset-3 choosequiz">
-                <select name="choosequizdrop" id="choosequizdrop" onchange="quizDescription()">
-                    <option value="" disabled selected>--Kies quiz--</option>
-                    {% for quiz in quizzes %}
-                        <option value="{{ quiz[0] }}">{{ quiz[1] }}</option>
-                    {% endfor %}
-                </select>
-            </form>
-        </div>
-    <p id="demo"></p>
-        <div class="row">
-            <p class="quizDescription col-lg-12" id="quizDescription"></p>
-        </div>
-        <div class="row">
-            <from class="col-lg-2 col-lg-offset-5" name="submitplayerforms">
-                <input type="submit" value="Start" class="button">
-            </from>
-        </div>
+        <form name="quizzen" method="POST" id="quizzen">
+            <div class="row">
+                {{ macro.build_player_forms(players, playersjs) }}
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-lg-offset-3 choosequiz">
+                    <select name="choosequizdrop" id="choosequizdrop" onchange="quizDescription({{ quizzesjs }})" required>
+                        <option value="" disabled selected>--Kies quiz--</option>
+                        {% for quiz in quizzes %}
+                            <option value="{{ quiz[0] }}">{{ quiz[1] }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <p class="quizDescription col-lg-12" id="quizDescription"></p>
+            </div>
+            <div class="row">
+                <input type="submit" class="button col-lg-2 col-lg-offset-5" id="submitQuizzen" value="Start" href="{{ url_for("quizVraag") }}">
+            </div>
+        </form>
     </div>
 {% endblock %}
