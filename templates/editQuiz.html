@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}
+Quiz bewerken
+{% endblock %}
+{% block body %}
+    <form method="POST">
+        {% for vraag in questions %}
+            <div class="row">
+                <h1>{{ vraag[1] }}</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-lg-offset-2">
+                    {% for answer in answers %}
+                        <input type="text" name={{ answer[0] }} value="{{ 1 }}">
+                    {% endfor %}
+                </div>
+                <div class="col-lg-1">
+                    {% for answer in answers %}
+                        {% if answer[2]==1 %}
+                            <input type="radio" value="1" name="correct{{ answer[0] }}" checked>
+                        {% else %}
+                            <input type="radio" value="1" name="correct{{ answer[0] }}" checked>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+    </form>
+
+{% endblock %}

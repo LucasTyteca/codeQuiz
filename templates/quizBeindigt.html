@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}
+statistieken
+{% endblock %}
+{% block body %}
+    <div class="quizBeindigt">
+        <div class="row">
+            <div class="col-lg-6 col-lg-offset-3">
+                <h1>{{ playerAndScores[0][0] }} wint met een score van {{ playerAndScores[0][1] }}!</h1>
+                <table class="col-lg-offset-1">
+                    {% for x in range(2,5) %}
+                            <tr>
+    {#                            <li>{{ playerAndScores[x][0] }}: {{ playerAndScores[x][1] }}</li>#}
+                                <td>{{ x }}.</td>
+                                <td>{{ playerAndScores[x-1][0] }} met </td>
+                                <td>{{ playerAndScores[x-1][1] }} punten</td>
+                            </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

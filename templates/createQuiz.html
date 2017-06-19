@@ -6,50 +6,58 @@ Welkom
     <div class="createquiz">
         <div class="editquiz">
             <div class="row">
-                <div class="col-lg-4 col-lg-offset-4">
+                <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4">
                     <h1>Quiz bewerken</h1>
                 </div>
             </div>
-            <form>
+            <form method="POST" name="quizbewerken" id="quizbewerken">
                 <div class="row">
-                    <div class="col-lg-4 col-lg-offset-4">
+                    <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4">
                         <select name="chooseditquiz">
                             <option value="" disabled selected>--Kies quiz--</option>
+                            {% for quiz in quizzes%}
+                                <option value="{{ quiz[0] }}">{{ quiz[1] }}</option>
+                            {% endfor %}
                         </select>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-2 col-lg-offset-5">
-                        <input type="submit" value="Bewerken" class="button">
+                    <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-offset-4 col-sm-4">
+                        <input type="submit" value="Bewerken" class="button" name="btn" disabled>
                     </div>
                 </div>
             </form>
         </div>
         <div class="newquiz">
             <div class="row">
-                <div class="col-lg-4 col-lg-offset-4">
+                <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4">
                     <h1>Quiz maken</h1>
                 </div>
             </div>
-            <form>
+            <form method="POST" name="createNewQuiz">
                 <div class="row">
-                    <div class="col-lg-4 col-lg-offset-4">
+                    <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4">
                         <input type="text" name="quizname" placeholder="Quiz naam">
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-4 col-lg-offset-4">
+                    <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4">
                         <input type="text" name="description" placeholder="Beschrijving">
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-4 col-lg-offset-4">
-                        <input type="text" name="amountquestions" placeholder="Aantal vragen">
+                    <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4">
+                        <input type="text" name="amountquestions" placeholder="Aantal vragen" id="amountquestions">
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-2 col-lg-offset-5">
-                        <input type="submit" class="button" value="Start">
+                    <div class="warning col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4" id="warningNaN" style="display:none">
+                        <p>Gelieve een getal in te geven of een getal dat groter is dan 0.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4">
+                        <input type="button" class="button last-of-page" id="buttonCreateNewQuiz" value="Start" name="btn" onclick="buttonCreateNewQuizFunc()">
                     </div>
                 </div>
             </form>

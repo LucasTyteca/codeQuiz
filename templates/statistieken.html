@@ -2,3 +2,176 @@
 {% block title %}
 statistieken
 {% endblock %}
+{% block body %}
+    <div class="row">
+        <select name="chooseGraph" id="chooseGraph" onchange="changeGraph()">
+            <option value="1">Aantal gespeelde quizzen</option>
+            <option value="2">Aantal gewonnen quizzen</option>
+            <option value="3">Juist beantwoorde vragen</option>
+            <option value="4" selected>Gemiddelde antwoordsnelheid</option>
+        </select>
+    </div>
+    <div class="row">
+        <canvas id="lineChart" class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></canvas>
+    </div>
+{% endblock %}
+{% block chartScripts %}
+        <script>
+        const chart = document.getElementById("lineChart");
+        let lineChart = new Chart (chart,{
+            type: 'line',
+            data:{
+                labels : [{% for x in players %}"{{ x }}",{% endfor %}],
+                datasets: [
+                    {
+                        lablel: "My First dataset",
+                        fill: false,
+                        lineTension: 0.1,
+                        backgroundColor: "rgba(75,192,192,0.4)",
+                        borderColor: "rgba(75,192,192,1)",
+                        borderCapStyle: 'butt',
+                        borderDash: [],
+                        borderDashOffset: 0.0,
+                        borderJoinStyle: 'mitter',
+                        pointBorderColor: "rgba(75,192,192,1)",
+                        pointBackgroundColor: "#fff",
+                        pointBorderWidth: 1,
+                        pointHoverRadius: 5,
+                        pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                        pointHoverBorderColor: "rgba(220,220,220,1)",
+                        pointHoverBorderWidth: 2,
+                        pointRadius: 1,
+                        pointHitRadius: 10,
+                        data: {{ gemAntwoordSnelheid }}
+                    }
+                ]
+            }
+        });
+
+        function changeGraph(){
+             var chart = document.getElementById("lineChart");
+             var option = document.getElementById("chooseGraph").value;
+             if (option=="1"){
+                 let lineChart = new Chart (chart,{
+                    type: 'line',
+                    data:{
+                        labels : [{% for x in players %}"{{ x }}",{% endfor %}],
+                        datasets: [
+                            {
+                                lablel: "My First dataset",
+                                fill: false,
+                                lineTension: 0.1,
+                                backgroundColor: "rgba(75,192,192,0.4)",
+                                borderColor: "rgba(75,192,192,1)",
+                                borderCapStyle: 'butt',
+                                borderDash: [],
+                                borderDashOffset: 0.0,
+                                borderJoinStyle: 'mitter',
+                                pointBorderColor: "rgba(75,192,192,1)",
+                                pointBackgroundColor: "#fff",
+                                pointBorderWidth: 1,
+                                pointHoverRadius: 5,
+                                pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                                pointHoverBorderColor: "rgba(220,220,220,1)",
+                                pointHoverBorderWidth: 2,
+                                pointRadius: 1,
+                                pointHitRadius: 10,
+                                data: {{ aantalGespeeld }}
+                            }
+                        ]
+                    }
+                });
+             }else if(option == 2){
+                 let lineChart = new Chart (chart,{
+                    type: 'line',
+                    data:{
+                        labels : [{% for x in players %}"{{ x }}",{% endfor %}],
+                        datasets: [
+                            {
+                                lablel: "My First dataset",
+                                fill: false,
+                                lineTension: 0.1,
+                                backgroundColor: "rgba(75,192,192,0.4)",
+                                borderColor: "rgba(75,192,192,1)",
+                                borderCapStyle: 'butt',
+                                borderDash: [],
+                                borderDashOffset: 0.0,
+                                borderJoinStyle: 'mitter',
+                                pointBorderColor: "rgba(75,192,192,1)",
+                                pointBackgroundColor: "#fff",
+                                pointBorderWidth: 1,
+                                pointHoverRadius: 5,
+                                pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                                pointHoverBorderColor: "rgba(220,220,220,1)",
+                                pointHoverBorderWidth: 2,
+                                pointRadius: 1,
+                                pointHitRadius: 10,
+                                data: {{ aantalGewonnen }}
+                            }
+                        ]
+                    }
+                });
+             }else if(option == 4){
+                 let lineChart = new Chart (chart,{
+                    type: 'line',
+                    data:{
+                        labels : [{% for x in players %}"{{ x }}",{% endfor %}],
+                        datasets: [
+                            {
+                                lablel: "My First dataset",
+                                fill: false,
+                                lineTension: 0.1,
+                                backgroundColor: "rgba(75,192,192,0.4)",
+                                borderColor: "rgba(75,192,192,1)",
+                                borderCapStyle: 'butt',
+                                borderDash: [],
+                                borderDashOffset: 0.0,
+                                borderJoinStyle: 'mitter',
+                                pointBorderColor: "rgba(75,192,192,1)",
+                                pointBackgroundColor: "#fff",
+                                pointBorderWidth: 1,
+                                pointHoverRadius: 5,
+                                pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                                pointHoverBorderColor: "rgba(220,220,220,1)",
+                                pointHoverBorderWidth: 2,
+                                pointRadius: 1,
+                                pointHitRadius: 10,
+                                data: {{ gemAntwoordSnelheid }}
+                            }
+                        ]
+                    }
+                });
+             } else if(option == 3){
+                 let lineChart = new Chart (chart,{
+                    type: 'line',
+                    data:{
+                        labels : [{% for x in players %}"{{ x }}",{% endfor %}],
+                        datasets: [
+                            {
+                                lablel: "My First dataset",
+                                fill: false,
+                                lineTension: 0.1,
+                                backgroundColor: "rgba(75,192,192,0.4)",
+                                borderColor: "rgba(75,192,192,1)",
+                                borderCapStyle: 'butt',
+                                borderDash: [],
+                                borderDashOffset: 0.0,
+                                borderJoinStyle: 'mitter',
+                                pointBorderColor: "rgba(75,192,192,1)",
+                                pointBackgroundColor: "#fff",
+                                pointBorderWidth: 1,
+                                pointHoverRadius: 5,
+                                pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                                pointHoverBorderColor: "rgba(220,220,220,1)",
+                                pointHoverBorderWidth: 2,
+                                pointRadius: 1,
+                                pointHitRadius: 10,
+                                data: {{ juisteAntwoorden }}
+                            }
+                        ]
+                    }
+                });
+             }
+        }
+    </script>
+{% endblock %}

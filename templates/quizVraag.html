@@ -3,5 +3,59 @@
     quizvraag
 {% endblock %}
 {% block body %}
-    test
+{#    quiz=quiz, question=question, answers=answers, player1=use("player1"), player2=use("player2"), player3=use(player3), player4=use(player4))#}
+    <div class="quizVraag">
+        <div class="row">
+            <div class="col-lg-2 col-lg-offset-10">
+                <form method="POST">
+                    <input type="submit" name="btn" value="Stoppen" class="button">
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1">
+                <h1>Vraag: {{ question[1] }}</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-lg-offset-1">
+                <h1>Antwoorden: </h1>
+                <ol type="a">
+                    {% for answer in answers %}
+                        <li>{{ answer[1] }}</li>
+                    {% endfor %}
+                </ol>
+            </div>
+            <div class="col-lg-3 col-lg-offset-4 table_quizvraag">
+                <h1>Leaderboard:</h1>
+                <table>
+                    <tr>
+                        <td>{{ player1 }}</td>
+                        <td>{{ scores[0][0][3] }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ player2 }}</td>
+                        <td>{{ scores[1][0][3] }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ player3 }}</td>
+                        <td>{{ scores[2][0][3] }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ player4 }}</td>
+                        <td>{{ scores[3][0][3] }}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <form method="POST" name="sendEmpty">
+        </form>
+    </div>
+    <script>
+        function onloadt() {
+            document.forms["sendEmpty"].submit();
+        }
+        window.onload = onloadt()
+    </script>
 {% endblock %}

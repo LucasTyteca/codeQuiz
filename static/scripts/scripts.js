@@ -28,9 +28,11 @@ function fillUpInput1(players) {
     }
     if((value!=player2 && value!=player3 && value!=player4)||(value === "newPlayer")) {
         warningPlayer1 = false;
+        document.getElementById("chooseplayer1").style.borderColor = "rgb(169, 169, 169)";
         playerWarning();
     }else{
         warningPlayer1 = true;
+        document.getElementById("chooseplayer1").style.borderColor = "red";
         playerWarning();
     }
 }
@@ -55,9 +57,11 @@ function fillUpInput2(players) {
     }
     if((value!=player1 && value!=player3 && value!=player4)||(value === "newPlayer")) {
         warningPlayer2 = false;
+        document.getElementById("chooseplayer2").style.borderColor = "rgb(169, 169, 169)";
         playerWarning();
     }else{
         warningPlayer2 = true;
+        document.getElementById("chooseplayer2").style.borderColor = "red";
         playerWarning();
     }
 }
@@ -82,9 +86,11 @@ function fillUpInput3(players) {
     }
     if((value!=player1 && value!=player2 && value!=player4)||(value === "newPlayer")) {
         warningPlayer3 = false;
+        document.getElementById("chooseplayer3").style.borderColor = "rgb(169, 169, 169)";
         playerWarning();
     }else{
         warningPlayer3 = true;
+        document.getElementById("chooseplayer3").style.borderColor = "red";
         playerWarning();
     }
 }
@@ -110,9 +116,11 @@ function fillUpInput4(players) {
     }
     if((value!=player1 && value!=player2 && value!=player3)||(value === "newPlayer")) {
         warningPlayer4 = false;
+        document.getElementById("chooseplayer4").style.borderColor = "rgb(169, 169, 169)";
         playerWarning();
     }else{
         warningPlayer4 = true;
+        document.getElementById("chooseplayer4").style.borderColor = "red";
         playerWarning();
     }
 }
@@ -254,3 +262,115 @@ function displayError(){
         button.disabled=false;
     }
 }
+
+function changeRadioNewQuiz(xvalue, checked){
+    radio1 = xvalue.toString() + xvalue.toString() + "1";
+    radio2 = xvalue.toString() + xvalue.toString() + "2";
+    radio3 = xvalue.toString() + xvalue.toString() + "3";
+    radio4 = xvalue.toString() + xvalue.toString() + "4";
+
+    radio1 = document.getElementById(radio1);
+    radio2 = document.getElementById(radio2);
+    radio3 = document.getElementById(radio3);
+    radio4 = document.getElementById(radio4);
+
+    textid = xvalue.toString() + checked.toString();
+    answer = document.getElementById(textid).value;
+
+    if(answer != "") {
+        if (checked == 1) {
+            radio2.checked = false;
+            radio3.checked = false;
+            radio4.checked = false;
+        } else if (checked == 2) {
+            radio1.checked = false;
+            radio3.checked = false;
+            radio4.checked = false;
+        } else if (checked == 3) {
+            radio1.checked = false;
+            radio2.checked = false;
+            radio4.checked = false;
+        } else if (checked == 4) {
+            radio1.checked = false;
+            radio2.checked = false;
+            radio3.checked = false;
+        }
+    }else{
+        checkedid = xvalue.toString() + xvalue.toString() + checked.toString();
+        document.getElementById(checkedid).checked=false;
+    }
+}
+
+function checkCorrAnswers(amountQuestions){
+    var corr = [];
+    for (i = 1; i < amountQuestions; i++) {
+loop:
+        for (value =1; value <= 4; value++){
+            radio = i.toString() + i.toString() + value.toString();
+            if(document.getElementById(radio).checked==true){
+                corr[i]=true;
+                break loop;
+            }else{
+                corr[i] = false;
+            }
+        }
+    }
+    errorfound = false;
+    for (i = 1; i < corr.length; i++) {
+        warningid = "warning"+ i.toString();
+        noCorrAnswerid = "noCorrAnswr" + i.toString();
+        if(corr[i]==false){
+            document.getElementById(warningid).style.display="block";
+            document.getElementById(noCorrAnswerid).style.display="block";
+            errorfound=true;
+        } else{
+            document.getElementById(warningid).style.display="none";
+            document.getElementById(noCorrAnswerid).style.display="none";
+        }
+    }
+    if (errorfound == false){
+        document.forms["newQuiz"].submit();
+    }
+}
+
+function buttonCreateNewQuizFunc(){
+    amountquestionslength=document.getElementById("amountquestions").value;
+    itisanumeber=true;
+    for(i=0; i < amountquestionslength.length; i++){
+        if(amountquestionslength.charAt(i) >= '0' && amountquestionslength.charAt(i) <= '9'){
+            console.log(amountquestionslength.charAt);
+            itisanumeber=true;
+        }else{
+            itisanumeber=false;
+            break
+        }
+    }
+    if (amountquestionslength<1){
+        itisanumeber = false;
+    }
+    if(itisanumeber == true){
+        document.forms['createNewQuiz'].submit();
+    }else{
+        document.getElementById("warningNaN").style.display="block";
+    }
+}
+
+$(document).ready(function(){
+    var $menu = $('#menu');
+    $('#menu').mmenu({
+        "offCanvas": {
+            "position" : "top",
+            "zposition": "front"
+        },
+        "navbar": {
+            "add": "false"
+        },
+        "slidingSubmenus": false
+    });
+    var api = $menu.data("mmenu");
+
+    var $btnmenu = $('#mmenuopen');
+    $('#mmenuopen').click(function(){
+        api.open();
+    });
+});

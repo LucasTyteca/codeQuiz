@@ -5,16 +5,28 @@
     <meta charset="UTF-8">
     <title>{% block title %} {% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for("static",filename="../static/css/bootstrap.css")}}">
+    <link rel="stylesheet" href="{{ url_for("static", filename="../static/mmenu/jquery.mmenu.all.css") }}">
     <link rel="stylesheet" href="{{ url_for("static",filename="../static/css/import.css") }}">
 </head>
 <body>
     <div class="base row">
-        <nav>
+        <nav class="web-nav hidden-xs hidden-sm">
             <ul>
-                <li class="col-lg-2 col-lg-offset-2"><a href="{{ url_for("index") }}">Home</a></li>
-                <li class="col-lg-2"><a href="{{ url_for("quizzenPage") }}">Quiz spelen</a></li>
-                <li class="col-lg-2"><a href="{{ url_for("createQuizPage") }}">Quiz maken</a></li>
-                <li class="col-lg-2"><a href="{{ url_for("statistiekenPage") }}">Statistieken</a></li>
+                <li class="col-lg-2 col-lg-offset-2 col-md-2 col-md-offset-2 first"><a href="{{ url_for("index") }}">Home</a></li>
+                <li class="col-lg-2 col-md-2 second"><a class="twoLine" href="{{ url_for("quizzenPage") }}">Quiz spelen</a></li>
+                <li class="col-lg-2 col-md-2 third"><a class="twoLine" href="{{ url_for("createQuizPage") }}">Quiz maken</a></li>
+                <li class="col-lg-2 col-md-2 fourth"><a href="{{ url_for("statistiekenPage") }}">Statistieken</a></li>
+            </ul>
+        </nav>
+        <div class="mobilemenudiv hidden-lg hidden-md">
+            <a href="#" class="mmenuopen hidden-lg hidden-md" id="mmenuopen"></a>
+        </div>
+        <nav id="menu" class="mobilemenu hidden-lg hidden-md">
+            <ul>
+                <li class="first"><a href="{{ url_for("index") }}">Home</a></li>
+                <li class="second"><a class="twoLine" href="{{ url_for("quizzenPage") }}">Quiz spelen</a></li>
+                <li class="third"><a class="twoLine" href="{{ url_for("createQuizPage") }}">Quiz maken</a></li>
+                <li class="fourth"><a href="{{ url_for("statistiekenPage") }}">Statistieken</a></li>
             </ul>
         </nav>
     </div>
@@ -24,12 +36,21 @@
     </div>
     <div class="base row">
         <div class="push"></div>
-        <footer class="col-lg-12">
-            <p class="col-lg-4">Project1</p>
-            <p class="col-lg-4">Lucas Tyteca, 1NMCT5</p>
-            <p class="col-lg-4">QuizTime</p>
+        <footer class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+            <div class="footertext">
+                <p class="col-lg-4 col-md-4">Project1</p>
+                <p class="col-lg-4 col-md-4">Lucas Tyteca, 1NMCT5</p>
+                <p class="col-lg-4 col-md-4">QuizTime</p>
+            </div>
         </footer>
     </div>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.2.0.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="{{ url_for("static", filename="../static/scripts/scripts.js") }}"></script>
+    <script src="{{ url_for("static", filename="../static/mmenu/jquery.mmenu.all.min.js") }}"></script>
+    <script src="{{ url_for("static", filename="../static/scripts/Chart.bundle.js") }}"></script>
+    {% block chartScripts %}
+    {% endblock %}
 </body>
 </html>

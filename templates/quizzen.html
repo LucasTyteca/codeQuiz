@@ -5,10 +5,10 @@ Quizzen
 {% block  body %}
     <div class="quizzen">
         <div class="row">
-            <p class="explanation col-lg-12">Lorem ipsum dolor sit amet, nec ne quaeque deseruisse, usu ne virtute oportere consectetuer. Mea in quem reprimique, id dicit percipit vis, dignissim splendide mediocritatem eam no. Placerat forensibus vis at, ferri fugit dicit id mea, ut est ipsum paulo iuvaret. Ludus imperdiet ius ea, ancillae</p>
+            <p class="explanation col-lg-12">Gelieve voordat u begint met een quiz te spelen, eerst de gebruikers registreert of nieuwe gebruikers aanmaakt.<br>Om een nieuwe gebruiker aan te maken kiest u in het dropdown menu voor de optie "nieuwe speler". U kunt dan de gegevens voor deze speler invullen.<br>Als u een reeds aangemaakte speler wenst te gebruiken, selecteert u deze uit het dropdown menu. U kunt dan ook de gegevens van die speler aanpassen.<br>Als u met minder dan vier spelers wenst te spelen laat u de dropdown list gewoon op "kies speler" staan.<br>Vervolgens kunt u een quiz kiezen en van start gaan!</p>
         </div>
         <div class="row">
-            <div class="warning col-lg-4 col-lg-offset-4" id="warning" style="display:none">
+            <div class="warning col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-xs-12 col-sm-12" id="warning" style="display:none">
                 <p id="playerwarning" style="display:none"> U kunt geen twee dezelfde spelers kiezen!</p>
                 <p id="displaynamewarning" style="display:none"> De ingegeven displaynaam bestaat al!</p>
             </div>
@@ -16,6 +16,9 @@ Quizzen
         <form name="quizzen" method="POST" id="quizzen">
             <div class="row">
                 {{ macro.build_player_forms(players, playersjs) }}
+            </div>
+            <div class="row">
+                 <h1 class="quiz">Quiz</h1>
             </div>
             <div class="row">
                 <div class="col-lg-6 col-lg-offset-3 choosequiz">
@@ -30,8 +33,10 @@ Quizzen
             <div class="row">
                 <p class="quizDescription col-lg-12" id="quizDescription"></p>
             </div>
-            <div class="row">
-                <input type="submit" class="button col-lg-2 col-lg-offset-5" id="submitQuizzen" value="Start" href="{{ url_for("quizVraag") }}">
+            <div class="row submitButton">
+                <div class="col-xs-12">
+                    <input type="submit" class="button col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-12" id="submitQuizzen" value="Start" href="{{ url_for("quizVraag") }}">
+                </div>
             </div>
         </form>
     </div>

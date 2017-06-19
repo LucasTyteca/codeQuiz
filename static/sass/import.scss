@@ -1,13 +1,17 @@
 // fonts and colors import
+@import "_bootstrap";
 @import "_colorsAndFonts";
-
-//elements imports
-@import "element/_button";
-@import "element/_forms";
-@import "element/_overall";
 
 //pages imports
 @import "_base";
 @import "_home";
 @import "_quizzen";
 @import "_createquiz";
+@import "_newQuiz.scss";
+@import "_quizVraag.scss";
+@import "_quizBeindigt.scss";
+
+//elements imports
+@import "element/_button";
+@import "element/_forms";
+@import "element/_overall";

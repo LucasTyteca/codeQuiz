@@ -1,0 +1,13 @@
+.newQuiz{
+  form{
+    .radio_btn{
+      margin-bottom:30px;
+      &:last-of-type{
+        margin-bottom:0;
+      }
+    }
+  }
+  .last-of-page{
+    margin-bottom: 40px;
+  }
+}

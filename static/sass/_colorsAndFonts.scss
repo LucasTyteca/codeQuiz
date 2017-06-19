@@ -1,9 +1,15 @@
-$nav-item-color : #858585;
+$nav-item-color : #30332E;
 $lighten-nav-item-color: lighten($nav-item-color, 10%);
-$before-nav-item-color: #b8b8b8;
+$before-nav-item-color: #30332E;
 $button-color: #b8b8b8;
 $lighten-button-color: lighten($button-color, 10%);
 $button-text-color: black;
 $lighten-button-text-color: lighten($button-text-color, 10%);
 $nav-text-color: black;
 $lighten-nav-text-color: lighten($nav-text-color, 10%);
+$buttonRed: #FF2D15;
+$buttonGreen: #37CC25;
+$buttonBlue: #1D39CC;
+$lighten-button-red: lighten($buttonRed, 10%);
+$lighten-button-green: lighten($buttonGreen, 10%);
+$lighten-button-blue: lighten($buttonBlue, 10%);

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}
+statistieken
+{% endblock %}
+{% block body %}
+    <p>Het spelen van de quiz gaat als volgt:<br>De vragen worden één per één getoont. De eerste die op zijn knop drukt mag antwoorden op de vraag. U zult dit zien aan de verlichting van de knop. Als hij/zij juist antwoord wordt er automatisch verdergegaan met de volgende vraag. Als er foutief geantwoord wordt krijgen de andere spelers de kans om te antwoorden.<br>Gelieve op uw knop te drukken als u klaar bent om te beginnen.</p>
+     <form method="POST" name="sendEmpty">
+     </form>
+    <script>
+        function onloadt() {
+            document.forms["sendEmpty"].submit();
+        }
+        window.onload = onloadt()
+    </script>
+{% endblock %}

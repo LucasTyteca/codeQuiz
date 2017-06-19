@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}
+New-quiz
+{% endblock %}
+{% block body %}
+    <div class="newQuiz">
+        <form name="newQuiz" method="POST" class="newquiz">
+            {% for x in range(1, amountOfQuestions) %}
+                <div class="row">
+                    <h1>Vraag {{ x }}</h1>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <input type="text" name="{{ x }}" placeholder="Vraag" required>
+                    </div>
+                    <div class="col-lg-2 col-md-2">
+                        <p>Juist antwoord:</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-lg-offset-2 col-md-4 col-md-offset-2 col-sm-6 col-sm-offset-2 col-xs-8 col-xs-offset-1">
+                        <input type="text" placeholder="Antwoord" name="{{ x }}1" id="{{ x }}1" required>
+                        <input type="text" placeholder="Antwoord" name="{{ x }}2" id="{{ x }}2" required>
+                        <input type="text" placeholder="Antwoord" name="{{ x }}3" id="{{ x }}3" >
+                        <input type="text" placeholder="Antwoord" name="{{ x }}4" id="{{ x }}4" >
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-xs-2 col-sm-1">
+                        <input type="radio" class="radio_btn" value="juist" name="{{ x }}{{ x }}1" id="{{ x }}{{ x }}1" onclick="changeRadioNewQuiz({{ x }}, 1)" >
+                        <input type="radio" class="radio_btn" value="juist" name="{{ x }}{{ x }}2" id="{{ x }}{{ x }}2" onclick="changeRadioNewQuiz({{ x }}, 2)">
+                        <input type="radio" class="radio_btn" value="juist" name="{{ x }}{{ x }}3" id="{{ x }}{{ x }}3" onclick="changeRadioNewQuiz({{ x }}, 3)">
+                        <input type="radio" class="radio_btn" value="juist" name="{{ x }}{{ x }}4" id="{{ x }}{{ x }}4" onclick="changeRadioNewQuiz({{ x }}, 4)">
+                    </div>
+                <div class="warning{{ x }} col-lg-5 col-md-5 warning col-sm-8 col-xs-12" style="display:none" id="warning{{ x }}">
+                    <p class="noCorrAnswr{{ x }}" id="noCorrAnswr{{ x }}" style="display:none">Gelieve een correct antwoord aan te duiden.</p>
+                </div>
+                </div>
+            {% endfor %}
+            <input type="button" value="Oplsaan" id="buttonNewQuiz" class="button last-of-page col-lg-2 col-lg-offset-2 col-md-2 col-md-offset-5 col-sm-4 col-sm-offset-4 col-xs-12" onclick="checkCorrAnswers({{ amountOfQuestions }})">
+        </form>
+    </div>
+{% endblock %}

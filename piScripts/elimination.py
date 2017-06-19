@@ -2,19 +2,19 @@ from RPi import GPIO as GPIO
 import time
 GPIO.setmode(GPIO.BCM)
 #knoppen declareren
-buttons = [18, 17, 27, 22] #oranje, rood, groen, blauw
-buttonOrange = 18
-buttonRed = 17
-buttonGreen = 27
-buttonBlue = 22
+buttons = [17, 24, 16, 22] #oranje, groen, blauw, rood
+buttonOrange = 17
+buttonGreen = 24
+buttonBlue = 16
+buttonRed = 22
 valueReadButtons = [10, 10, 10, 10]
 
 #leds declareren
-leds = [5, 6, 13, 19] #oranje, rood, groen, blauw
-ledOrange = 5
+leds = [27, 25, 18, 6] #oranje, groen, blauw, rood
+ledOrange = 27
+ledGreen = 25
+ledBlue = 18
 ledRed = 6
-ledGreen = 19
-ledBlue = 26
 
 #andere variabelen
 notWon = True
