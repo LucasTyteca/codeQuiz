@@ -1,6 +1,6 @@
 #imports
-# from time import sleep
-# sleep(20)
+from time import sleep
+sleep(20)
 import json as json
 
 from flask import Flask
